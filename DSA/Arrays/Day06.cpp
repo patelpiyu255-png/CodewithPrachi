@@ -17,13 +17,16 @@ int main(){
 
     for(int i=0; i<5; i++){
         if(arr[i] == search){
+           
+            cout<<"Element found at index: "<<i<<endl;
             found = true;
             break;
         }
     }
     
-    if(found)
-        cout<<"Element found in the array.";
-    else
+    if(!found){
+        
         cout<<"Element not found in the array.";
+    }
+    return 0;
 }
