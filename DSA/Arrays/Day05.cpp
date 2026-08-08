@@ -6,9 +6,9 @@ int main(){
     cout<<"Enter a number:";
     cin>>n;
 
-    if(n%2 ==0)
-    cout<<"Even";
+    if(n%2 !=0)
+    cout<<"Odd";
     else
-    cout<<"odd";
+    cout<<"Even";
     return 0;
 }
