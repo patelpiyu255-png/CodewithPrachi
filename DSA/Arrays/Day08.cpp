@@ -4,24 +4,24 @@ using namespace std;
 int main(){
     int arr[5] = {10, 25, 7, 40, 30};
     
-    int largest = arr[0];
-    int secondlargest = INT_MIN;
+    int smallest = arr[0];
+    int secondsmallest = INT_MIN;
 
     for(int i = 0; i < 5; i++){
-        if(arr[i]>largest)
+        if(arr[i]<smallest)
         {
-            secondlargest = largest;
-            largest = arr[i];
+            secondsmallest = smallest;
+            smallest = arr[i];
         }
         else
-        if( arr[i] > secondlargest && arr[i] !=largest)
+        if( arr[i] < secondsmallest && arr[i] !=smallest)
         {
-            secondlargest = arr[i];
+            secondsmallest = arr[i];
         }
     }
 
-    cout<<"Largest = "<<largest<<endl;
-    cout<<"SecondLargest = "<<secondlargest<<endl;
+    cout<<"Smallest = "<<smallest<<endl;
+    cout<<"SecondSmallest = "<<secondsmallest<<endl;
 
     return 0;
     
