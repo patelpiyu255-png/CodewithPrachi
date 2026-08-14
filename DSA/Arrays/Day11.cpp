@@ -3,10 +3,21 @@ using namespace std;
 
 int main()
 {
-    int arr[5] = {10, 20, 30, 40, 50};
+    int n;
+
+    cout << "Enter array size: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
 
     int start = 0;
-    int end = 4;
+    int end = n - 1;
 
     while (start < end)
     {
@@ -18,9 +29,9 @@ int main()
         end--;
     }
 
-    cout << "Array after swapping: ";
+    cout << "Reversed array: ";
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
