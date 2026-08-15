@@ -7,6 +7,15 @@ int main()
     int n = 7;
 
     int index = 0;
+    int zeroCount = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == 0)
+        {
+            zeroCount++;
+        }
+    }
 
     for (int i = 0; i < n; i++)
     {
@@ -29,6 +38,10 @@ int main()
     {
         cout << arr[i] << " ";
     }
+
+    cout << endl;
+
+    cout << "Total zeros = " << zeroCount << endl;
 
     return 0;
 }
