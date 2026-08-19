@@ -12,8 +12,10 @@ int main()
         {
             if (arr[i] + arr[j] == target)
             {
-                cout << arr[i] << " + " << arr[j]
+                cout << "Pair: " << arr[i] << " + " << arr[j]
                      << " = " << target << endl;
+
+                cout << "Indexes: " << i << " and " << j << endl;
             }
         }
     }
