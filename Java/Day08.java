@@ -1,24 +1,30 @@
-public class Day08{
+public class Main {
     public static void main(String[] args) {
 
-        int[] arr = {-2, 1, -3, 4, 5};
+        int[] arr = {1, 3, 5, 2, 2};
+        int n = arr.length;
 
-        int currentSum = arr[0];
-        int maxSum = arr[0];
+        for (int i = 0; i < n; i++) {
 
-        for (int i = 1; i < arr.length; i++) {
+            int leftSum = 0;
+            int rightSum = 0;
 
-            if (currentSum + arr[i] > arr[i]) {
-                currentSum = currentSum + arr[i];
-            } else {
-                currentSum = arr[i];
+            // Calculate left sum
+            for (int j = 0; j < i; j++) {
+                leftSum = leftSum + arr[j];
             }
 
-            if (currentSum > maxSum) {
-                maxSum = currentSum;
+            // Calculate right sum
+            for (int j = i + 1; j < n; j++) {
+                rightSum = rightSum + arr[j];
+            }
+
+            if (leftSum == rightSum) {
+                System.out.println("Equilibrium Index = " + i);
+                System.out.println("Left Sum = " + leftSum);
+                System.out.println("Right Sum = " + rightSum);
+                break;
             }
         }
-
-        System.out.println("Maximum subarray sum = " + maxSum);
     }
 }
