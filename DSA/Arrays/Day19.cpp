@@ -3,24 +3,52 @@ using namespace std;
 
 int main()
 {
-    int arr1[4] = {1, 2, 4, 6};
-    int arr2[4] = {3, 5, 7, 8};
+    int n, m, target;
 
-    int target = 9;
+    cout << "Enter size of first array: ";
+    cin >> n;
 
-    cout << "Pairs with sum " << target << ":" << endl;
+    int arr1[n];
 
-    for (int i = 0; i < 4; i++)
+    cout << "Enter elements of first array: ";
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < 4; j++)
+        cin >> arr1[i];
+    }
+
+    cout << "Enter size of second array: ";
+    cin >> m;
+
+    int arr2[m];
+
+    cout << "Enter elements of second array: ";
+    for (int i = 0; i < m; i++)
+    {
+        cin >> arr2[i];
+    }
+
+    cout << "Enter target sum: ";
+    cin >> target;
+
+    int count = 0;
+
+    cout << "\nPairs with sum " << target << ":" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
         {
             if (arr1[i] + arr2[j] == target)
             {
                 cout << arr1[i] << " + " << arr2[j]
                      << " = " << target << endl;
+
+                count++;
             }
         }
     }
+
+    cout << "\nTotal pairs = " << count << endl;
 
     return 0;
 }
