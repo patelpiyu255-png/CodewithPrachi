@@ -1,49 +1,35 @@
+// 
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int arr1[5] = {1, 2, 2, 4, 6};
-    int arr2[5] = {3, 5, 7, 8, 8};
+    int arr1[5] = {10, 20, 30, 40, 50};
+    int arr2[5] = {5, 10, 15, 20, 25};
 
-    int target = 9;
+    int target = 15;
     int count = 0;
 
-    cout << "Pairs with sum " << target << ":" << endl;
+    cout << "Pairs with difference " << target << ":" << endl;
 
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
         {
-            if (arr1[i] + arr2[j] == target)
+            if (arr1[i] - arr2[j] == target)
             {
-                bool alreadyFound = false;
+                cout << arr1[i] << " - " << arr2[j]
+                     << " = " << target << endl;
 
-                // Check if same values were already printed
-                for (int k = 0; k < i; k++)
-                {
-                    if (arr1[k] == arr1[i])
-                    {
-                        alreadyFound = true;
-                        break;
-                    }
-                }
+                cout << "Indexes: " << i << " and " << j << endl;
 
-                if (!alreadyFound)
-                {
-                    cout << arr1[i] << " + " << arr2[j]
-                         << " = " << target << endl;
-
-                    cout << "Indexes: "
-                         << i << " and " << j << endl;
-
-                    count++;
-                }
+                count++;
             }
         }
     }
 
-    cout << "Total unique pairs = " << count << endl;
+    cout << "Total pairs = " << count << endl;
 
     return 0;
 }
